@@ -1,0 +1,13 @@
+
+-python applications require a set of libraries to interact with mongodb
+(librares are refered to as libraries)
+
+python drivers:
+-pymongo (for synchronous applications)
+-motor (for asynchronous python applications)
+
+export MONGODB_URI='mongodb+srv://kantorarthur222_db_user:parola@cluster0.jvenfa2.mongodb.net/'
+.venv/bin/python connection.py
+
+--when you run the connection, so you wont expose your password
+
