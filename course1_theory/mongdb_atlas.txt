@@ -1,0 +1,15 @@
+MongoDB Atlas
+
+What is it?
+-Database as a service
+-You dont need to manage your MongoDB, Atlas does it for you
+
+It does:
+Deployment
+Monitoring
+Backup
+Restoration
+Archiving
+
+(Data it's stored on more than 1 server, ensuring data redundancy)
+

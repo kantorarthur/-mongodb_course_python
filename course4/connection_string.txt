@@ -1,0 +1,16 @@
+connection string can have two formats in mongodb:
+standard format
+srv format
+
+by default, mongodb atlas deployments use the srv format
+
+
+mongodb connection string:
+
+mongodb+srv://<username>:<password>@cluster
+
+srv provides tls secure connection
+with srv the mongodb drivers perform a dns lookup to retrive the srv using the domain name
+(because the mongodb servers store multiple databases within an ip)
+
+<username>:<password> - optional but must be provided if access control is enabled

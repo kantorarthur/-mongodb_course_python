@@ -1,0 +1,46 @@
+db.movies.find({title: 'Christmas Vacation'})
+
+insertOne() - insert a single document and returns a document with status of the insert
+
+db.movies.insertOne(
+{
+	title: 'Christmas Vacation',
+	cast: ['Thomas Shelby', 'Bok']
+	runtime: 97,
+	rated: "PG-13"
+})
+
+returns:
+ {
+  acknowledged: true,
+  insertedId: ObjectId('6ae28b64b3c1aac17e2876b1')
+}
+
+
+mongosh its built on top of nodejs
+we can easily leverage javascript language
+
+
+ function cube(number)
+| {
+| if (typeof number !== 'number')
+| {
+|    throw new Error("Input must be a number!");
+| }
+| return number ** 3;
+| }
+[Function: cube]
+
+if you write this by itself it will be inside the global scope of the database
+
+you can load functions just for the lifetime of the terminal by using
+load()
+
+
+external editor to edit functions withing mongosh:
+edit()
+
+config.get('editor')
+if null
+config.set('editor', 'nvim')
+edit cube

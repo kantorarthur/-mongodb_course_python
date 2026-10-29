@@ -1,0 +1,6 @@
+Shared Clusters:
+
+-Ideal for smaller workloads and include a "free forever" tier.
+
+Dedicated clusters:
+-Larger and can be optimized to your needs

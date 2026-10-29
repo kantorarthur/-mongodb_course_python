@@ -1,0 +1,39 @@
+the choice between "embedding" and "referencing" depends on the relationships in your data
+
+one to one:
+we can embed the data directly within the parent document
+eg:
+we have movies - studio one to one relation
+
+we can create a field "studio" in the movies entity and use the studio name as value
+
+
+one to many:
+embedding preferred to keep data that is accessed together, stored together
+
+but we might want to use references when:
+large datasets or
+data often accessed independently
+
+eg: we have movies - cast (one to many)
+
+embedding: we use a field in movies:
+cast: ["alex", "andrew"]
+
+referencing
+cast: ['66bifif9i92', '8858jjjb7d2'] - ids to objects of "performers" entity
+
+many to many:
+embed or reference
+
+
+
+embeddings use cases:
+when we often access data as a single unit
+small, fixed-size related data
+minimize database operations
+
+referencing use cases:
+we need to manage large db
+we want independent access (like we dont want to access only the name of the actor, we want to access its age, etc... and change them, and we want only those, we dont want to search "actor in movie...." because we dont care about the movie, only the actor)
+

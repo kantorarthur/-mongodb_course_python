@@ -1,0 +1,33 @@
+entities
+attributes
+
+relationships: one to one; one to many; many to many
+
+each piece of information in a DB can be related to other information
+we call those entities
+
+entities:
+-unique
+-independent
+-represents objects(eg: person, product...)
+-represented by documents
+-grouped in collections
+
+eg: users entity: _id:... name: ... (the entity is users itself, not the fields and keys)
+
+attributes:
+-characteristics that describe an entity
+eg: name, description and price of the product
+-attributes are represented as field-value pairs
+
+relationships:
+one to one - one entity is related to one other entity
+eg: a movie is released by a single studio -- therefore the relationship is "one to one"
+
+one to many - one entity is related to multiple other entities
+eg: a movie has multiple casts => one to many
+
+many to many - multiple entities are related to multiple other entities
+eg: a movie may be shown in many theatres, and the theatres themselfs may show many movies
+
+

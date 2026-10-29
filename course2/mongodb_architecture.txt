@@ -1,0 +1,10 @@
+Ways of storing data in MongoDB:
+-Documents: Field-value pairs
+-Collection: A group of documents that correspond to an entity
+-Database: A group of collections it's stored insied a database
+-Nodes: A node refers to an individiual MongoDB instance
+This instance can be running on a physical machine;virtual machine or container
+-Cluster: A group of MongoDB nodes
+There are 2 types of clusters: -Replica sets and sharded clusters
+
+-Replica sets: high availability(replication)

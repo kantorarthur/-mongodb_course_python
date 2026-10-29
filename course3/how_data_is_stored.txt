@@ -1,0 +1,27 @@
+field-value pairs
+
+field - identifier
+value - data itself
+
+field needs to be unique
+
+field needs to be string
+
+values can be of different types
+
+
+mongodb stores documents in BSON
+
+BSON it's Binary Json
+
+BSON it's binary format (not human readable) unlike json
+
+BSON it's extension of JSON
+
+
+
+maximum docuemnt size of 16mb - that's for performance
+
+maximum 100 levels of nesting/document
+
+mongodb has a flexible schema, allowing fields to have polymorphic states (like you can have a field   "key: 3, alex" it can hold string and int at the same time)

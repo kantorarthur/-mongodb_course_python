@@ -1,0 +1,3 @@
+default port: 27017
+
+mongosh --port 28888 --changes port

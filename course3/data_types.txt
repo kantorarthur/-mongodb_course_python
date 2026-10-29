@@ -1,0 +1,14 @@
+data types supported by bson:
+
+-booleans
+-null
+-string
+-number
+-object
+-array
+-dates
+-objectID
+
+numbers can be int32 or int64
+cand also be: double or decimal128
+

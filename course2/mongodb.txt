@@ -1,0 +1,19 @@
+Non relational database - Distributed system architecture
+
+
+A distributed database is one where the data is spread across multiple machines or nodes.
+
+Each node may be in a different geographic location.
+If one machine fails, system can still function because of that.
+
+Distributed databases also store data close to the source, reducing latency.
+
+
+
+MongoDB stores data in JSON like documents.
+Can support Polymorphic data
+-Allows flexible schema
+
+
+
+A document database can represent complex data structures
