@@ -1,1 +1,1 @@
-### MongoDB Python Developer course - personal notes and code
+### MongoDB Python Developer course - personal notes and code.
