@@ -1,0 +1,6 @@
+
+bson it's an extension of json
+
+bson it's optimized for storage retrieval
+(because it's represented in bytes, obv)
+

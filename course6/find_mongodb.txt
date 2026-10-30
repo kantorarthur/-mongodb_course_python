@@ -1,0 +1,18 @@
+db.<collection>.find()
+--returns all the documents in collection
+
+
+db.<collection>.find(
+{ state: "AZ"})
+
+-returns all documents that have state field "AZ"
+
+$in --allows you to select more values that you want to check
+
+eg: you want to get returned all documents that have
+state value "AZ" or "SF"
+
+db.<collection>.find(
+{
+ state: {$in: ["AZ", "SF"]}
+})

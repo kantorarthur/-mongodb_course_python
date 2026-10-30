@@ -1,0 +1,12 @@
+
+-Why use "python -m venv venv ./venv/Scripts/Activate.ps1"
+That command creates a director in which we will install the libraries needed just for this project
+so the versions on libraries and stuff does not create conflict between other python projects
+
+
+insertOne()
+
+db.<collection>.insertOne({...})
+
+-If the collection does not exist in the database MongoDb creates the collection for you
+

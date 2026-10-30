@@ -1,0 +1,18 @@
+
+
+
+indexes are data structures that store small portion of a collection's data in an ordered format
+optimized for fast search
+
+if you want to search a document by order_id without an index, mongodb has to search
+every document until the order_id
+
+mongodb is using b+ trees
+
+
+indexes consume additional disk space
+
+indexes improve the performance of read operations at the cost of write operations
+
+database must update index entries on write operations
+

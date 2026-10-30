@@ -1,0 +1,9 @@
+
+
+to work with _ids we need to use
+ObjectId() from pymongo library
+
+bson files are represented as dictionaries in python
+
+
+db.collection.update_one(<filter>, <update>)

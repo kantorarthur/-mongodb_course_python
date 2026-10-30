@@ -1,0 +1,27 @@
+db.collection.updateOne(
+<filter>,
+<update>,
+{options}
+}
+
+filter - selection criteria for the document
+update - contains an update operator expression that will
+be used in the update
+options - its not a required argument
+
+
+$set - adds new fields and values to a document
+or
+replaces the value of a field with a specified value
+
+$push - appends a value to an array
+or
+if absent, $push adds the array field with the value as its element
+
+	
+db.podcasts.updateOne(
+{ _id: ObjectId("123") },
+{ $set: { subscribers: 5333} })
+
+--We update the object with id 123 from podcasts
+and we set its subscribers to "5333"

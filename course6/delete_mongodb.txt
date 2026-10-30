@@ -1,0 +1,7 @@
+db.podcasts.deleteOne(
+{_id: ObjectId("1234")}
+)
+
+db.podcasts.deleteMany(
+{ category: "crime"}
+)
