@@ -1,0 +1,129 @@
+Redis is an single threaded, in memory database (cache)
+
+It dispose of sub-second latency
+
+Redis = Remote Dictionary Server
+
+Data is always read/write from RAM, but it also stores its data
+on the disk so it can be reconstructed
+
+Every data point in the database it's a key followed by
+a data structure
+(hashmap like)
+
+Every command it's atomic(thanks to the fact that 
+commands are processed in a single-threaded fashion)
+
+SET key value
+
+GET key (returns value inside key)
+
+Redis processes commands one at a time, in a single thread.
+
+eg: you do - GET profile:42; INCR counter; SET user:1:name "Alex"
+
+it will be surely processed in the written order.
+
+If commands are processed sequential, how is reddis fast?
+Because it's using pipelining:
+
+What does that mean?
+Instructions are processed without waiting the "confirmation"
+message that the before instruction was succesfully processed.
+
+
+Persistance use cases:
+
+1. Use redis for reads and SQL/NonSQL database for writes
+
+2. Use redis with replicas:
+We have 1 primary redis, and 2 replicas
+The primary redis it's the one being written in and also
+transmitting the new data to the 2 replicas
+
+We read from replicas.
+
+If the primary redis dies, one of the replicas take its place.
+
+When the primary redis die, we may lose availability for
+a few seconds, but we preserve most of the cached data.
+
+3. RDB snapshots - We configure redis to take a snapshot
+every few minutes.
+
+On restart, redis loads the snapshot into memory.
+
+4. If we have sensitive data that we cannot afford to lose,
+we set append to true.
+
+That means that redis makes a snapshot every few seconds.
+
+
+5. When right volume grows to large, we can set up shardings
+
+Sharding means that we split the memory ram into smaller
+chunks, so we can retrieve data faster by hashing
+
+eg: we have 16gb ram
+we split the ram into 16/4gb (so now we have 4 redis 
+instances of 4gb)
+
+and we retrieve data by using id % N (N = 4)
+
+
+Concrete use case:
+
+We first check if the key is in the redis.
+
+If it is, we retrieve it from there
+
+If the key is not in the redis, it's a cache miss and we get it from the database, then update the redis too (with the updated value from db)
+
+Cleanup strategy redis:
+
+TTL - Time to live on each key
+
+LRU - least recently used
+
+
+We can make rate limiters using redis:
+
+eg:
+We are using a hashlike index using:
+
+IP + API token and we set a:
+Maximum querries for that index + TTL
+
+If the maximum querries reach the limit, the user has to wait
+TTL time left to make another querry
+
+
+
+More explaining on pipeline:
+
+Redis asks the OS:
+
+Do you have data for me?
+
+And there comes the pipeline:
+
+If there was no pipeline, redis would read:
+
+Data 1(ONLY 1 DATA) -> execute -> write "OK" -> sleep -> read data2 -> execute -> ...
+
+But with pipeline:
+It gets all ready data all once (given by OS)
+
+read data1, 2, 3 -> executes data 1, 2, 3 -> write "OK", 1, "OK" -> sleep
+
+also, this is way more efficient because it avoids constant
+context switching (when redis sleeps and comes back 
+it has to context switch between kernel and user space)
+(it has to call trap)
+
+
+When you write data on SSD (snapshots), redis forks() a 
+process child which always writes the new data on SSD
+while parent process processes data
+
+
